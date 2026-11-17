@@ -67,4 +67,20 @@ class K1KickSoccerD150B00MiddleCfg(K1KickSoccerControllerCfg):
         self.policy.checkpoint_path = "robots/k1/models/d1.50_b+00_middle.onnx"
 
 
+@configclass
+class K1KickSoccerD150B00LeftCfg(K1KickSoccerControllerCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        self.policy.checkpoint_path = "robots/k1/models/d1.50_b+00_left.onnx"
+
+
+@configclass
+class K1KickSoccerD150B00RightCfg(K1KickSoccerControllerCfg):
+    def __post_init__(self):
+        super().__post_init__()
+        self.policy.checkpoint_path = "robots/k1/models/d1.50_b+00_right.onnx"
+
+
 register_task("k1_kick_soccer_d150_b00_middle", K1KickSoccerD150B00MiddleCfg())
+register_task("k1_kick_soccer_d150_b00_left", K1KickSoccerD150B00LeftCfg())
+register_task("k1_kick_soccer_d150_b00_right", K1KickSoccerD150B00RightCfg())
